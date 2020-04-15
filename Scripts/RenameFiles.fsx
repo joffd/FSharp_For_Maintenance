@@ -5,8 +5,8 @@ open System
 open System.IO
 
 [<Literal>]
-let Folder = """P:\CloudStaton\PhotoVideo\SOURCE\Thailand\2019 - 04 - Koh Lipe"""
-//let Folder = """P:\CloudStaton\PhotoVideo\SOURCE\Thailand\test"""
+let Folder = """P:\"""
+
 
 type ResultRename =
 | Success of string
@@ -124,8 +124,7 @@ let renameBatch (filters: (string -> bool) list)
     |> Seq.toList
     |> printSummary
 
-Directory.GetFiles(Folder)
-|> Seq.iter (fun s -> (printfn "%s" (Path.GetDirectoryName(s))))
+
 
 let ruleErr (str: string) =
     if (str.[..1] = "PA") then Some("") else None
